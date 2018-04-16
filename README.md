@@ -1,7 +1,7 @@
 [![Apache 2](http://img.shields.io/badge/license-Apache%202-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 
 # Web based SSH terminal for Plesk
-![](https://github.com/plesk/ext-ssh-terminal/raw/master/src/_meta/icons/32x32.png)
+![](https://github.com/plesk/ext-ssh-terminal/raw/master/src/_meta/icons/512x512.png)
 
 This extension helps you managing your server by providing a web based SSH terminal so you can access your servers shell securely from the Plesk control panel.
 
