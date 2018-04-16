@@ -1,0 +1,18 @@
+{
+    "name": "plesk/ext-ssh-terminal",
+    "config": {
+        "vendor-dir": "src/plib/vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "PleskExt\\SshTerminal\\": "modules/ssh-terminal/library/"
+        }
+    },
+    "require": {
+        "php": "^5.6|^7.0|^7.1",
+        "plesk/api-php-lib": "@dev"
+    },
+    "require-dev": {
+        "plesk/pm-api-stubs": "^17.8.4"
+    }
+}

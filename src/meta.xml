@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 1999-2018. Plesk International GmbH. All rights reserved. -->
+<module>
+    <id>ssh-terminal</id>
+    <name>SSH Terminal</name>
+    <description>This extension helps you managing your server by providing a web based SSH terminal so you can access your servers shell securely from the Plesk control panel.</description>
+    <category>server_tool</category>
+    <url>https://plesk.com</url>
+    <version>1.0.0</version>
+    <release>1</release>
+    <vendor>Plesk</vendor>
+    <os>unix</os>
+    <plesk_min_version>17.0</plesk_min_version>
+</module>
+
