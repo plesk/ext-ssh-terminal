@@ -20,7 +20,8 @@ class Modules_SsHTerminal_CustomButtons extends pm_Hook_CustomButtons
                 'title' => pm_Locale::lmsg('sshTerminalButtonTitle'),
                 'description' => pm_Locale::lmsg('sshTerminalButtonDescription'),
                 'icon' => pm_Context::getBaseUrl() . 'images/icon.png',
-                'link' => pm_Context::getActionUrl('index', 'index'),
+                'link' => pm_Context::getActionUrl('index', 'index')
+              ]
         ];
     }
 }
