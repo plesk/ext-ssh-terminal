@@ -5,3 +5,5 @@ This extension helps you managing your server by providing a web based SSH termi
 
 ## More information
 This extension is built on top of [Gravitational Teleport](https://github.com/gravitational/teleport).
+
+Supported operation systems: Ubuntu, Debian, CentOs and Red Hat
