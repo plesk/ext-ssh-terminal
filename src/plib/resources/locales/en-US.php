@@ -3,6 +3,7 @@
 
 $messages = [
     // Add language strings
-    'CustomButton.sshTerminalButtonTitle'       => 'Start SSH Terminal',
-    'CustomButton.sshTerminalButtonDescription'  => 'Open the SSH Terminal Extensions'
+    'CustomButton.sshTerminalButtonTitle' => 'SSH Terminal',
+    'CustomButton.sshTerminalButtonDescription' => 'Open the SSH Terminal Extensions',
+    'index.title' => 'SSH Terminal',
 ];
