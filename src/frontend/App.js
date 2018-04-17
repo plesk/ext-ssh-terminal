@@ -1,9 +1,9 @@
 import { createElement, LocaleProvider, PropTypes } from '@plesk/ui-library';
-import Home from './containers/Home';
+import Term from './containers/Term';
 
 const App = ({ locale }) => (
     <LocaleProvider messages={require(`./locale/${locale}.json`)}>
-        <Home />
+        <Term />
     </LocaleProvider>
 );
 

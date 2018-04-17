@@ -9,7 +9,10 @@
   "author": "Plesk",
   "license": "Apache-2.0",
   "dependencies": {
-    "create-plesk-app": "^1.0.1"
+    "create-plesk-app": "^1.0.1",
+    "events": "^2.0.0",
+    "lodash": "^4.17.5",
+    "xterm": "^3.3.0"
   },
   "devDependencies": {},
   "scripts": {
