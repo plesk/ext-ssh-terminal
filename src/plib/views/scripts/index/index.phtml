@@ -1,3 +1,65 @@
 <?php
 // Copyright 1999-2018. Plesk International GmbH.
 ?>
+<?php $baseUrl = pm_Context::getBaseUrl() . 'index.php/index/index' ?>
+<?php $proxyUrl = pm_Context::getBaseUrl() . 'teleport' ?>
+<meta name="grv_csrf_token" content="4f433589ec9809b1f6b086696295ff2cd066f0fab55986b727129e7468aafe52" />
+<meta name="grv_bearer_token" content="e30=" />
+
+<link href="<?=$proxyUrl?>/web/app/vendor.8d3d080379284e16ff8342344c77ef81.css" rel="stylesheet">
+<div class="grv">
+    <div id="app"></div>
+    <script type="text/javascript">
+        window.GRV_CONFIG = {
+            auth: {
+                second_factor:"otp"
+            },
+            routes: {
+                app: '<?=$baseUrl?>/web',
+                login: '<?=$baseUrl?>/web/login',
+                nodes: '<?=$baseUrl?>/web/nodes',
+                currentSession: '<?=$baseUrl?>/web/cluster/:siteId/sessions/:sid',
+                sessions: '<?=$baseUrl?>/web/sessions',
+                newUser: '<?=$baseUrl?>/web/newuser/:inviteToken',
+                error: '<?=$baseUrl?>/web/msg/error(/:type)',
+                info: '<?=$baseUrl?>/web/msg/info(/:type)',
+                pageNotFound: '<?=$baseUrl?>/web/notfound',
+                terminal: '<?=$baseUrl?>/web/cluster/:siteId/node/:serverId/:login(/:sid)',
+                player: '<?=$baseUrl?>/web/player/cluster/:siteId/sid/:sid',
+                settingsBase: '<?=$baseUrl?>/web/settings',
+                settingsAccount: '<?=$baseUrl?>/web/settings/account',
+                webApi: '<?=$proxyUrl?>/v1/webapi/*',
+            },
+            api: {
+                ssoOidc: '<?=$proxyUrl?>/v1/webapi/oidc/login/web?redirect_url=:redirect&connector_id=:providerName',
+                ssoSaml: '<?=$proxyUrl?>/v1/webapi/saml/sso?redirect_url=:redirect&connector_id=:providerName',
+                renewTokenPath: '<?=$proxyUrl?>/v1/webapi/sessions/renew',
+                sessionPath: '<?=$proxyUrl?>/v1/webapi/sessions',
+                userContextPath: '<?=$proxyUrl?>/v1/webapi/user/context',
+                userStatusPath: '<?=$proxyUrl?>/v1/webapi/user/status',
+                invitePath: '<?=$proxyUrl?>/v1/webapi/users/invites/:inviteToken',
+                createUserPath: '<?=$proxyUrl?>/v1/webapi/users',
+                changeUserPasswordPath: '<?=$proxyUrl?>/v1/webapi/users/password',
+                u2fCreateUserChallengePath: '<?=$proxyUrl?>/v1/webapi/u2f/signuptokens/:inviteToken',
+                u2fCreateUserPath: '<?=$proxyUrl?>/v1/webapi/u2f/users',
+                u2fSessionChallengePath: '<?=$proxyUrl?>/v1/webapi/u2f/signrequest',
+                u2fChangePassChallengePath: '<?=$proxyUrl?>/v1/webapi/u2f/password/changerequest',
+                u2fChangePassPath: '<?=$proxyUrl?>/v1/webapi/u2f/password',
+                u2fSessionPath: '<?=$proxyUrl?>/v1/webapi/u2f/sessions',
+                sitesBasePath: '<?=$proxyUrl?>/v1/webapi/sites',
+                sitePath: '<?=$proxyUrl?>/v1/webapi/sites/:siteId',
+                nodesPath: '<?=$proxyUrl?>/v1/webapi/sites/:siteId/nodes',
+                siteSessionPath: '<?=$proxyUrl?>/v1/webapi/sites/:siteId/sessions',
+                sessionEventsPath: '<?=$proxyUrl?>/v1/webapi/sites/:siteId/sessions/:sid/events',
+                siteEventSessionFilterPath: '<?=$proxyUrl?>/v1/webapi/sites/:siteId/sessions',
+                siteEventsFilterPath: '<?=$proxyUrl?>/v1/webapi/sites/:siteId/events?event=session.start&event=session.end&from=:start&to=:end',
+                ttyWsAddr: ':fqdm<?=$proxyUrl?>/v1/webapi/sites/:cluster/connect?access_token=:token&params=:params',
+                ttyEventWsAddr: ':fqdm<?=$proxyUrl?>/v1/webapi/sites/:cluster/sessions/:sid/events/stream?access_token=:token',
+                ttyResizeUrl: '<?=$proxyUrl?>/v1/webapi/sites/:cluster/sessions/:sid',
+            },
+        };
+    </script>
+    <script type="text/javascript" src="<?=$proxyUrl?>/web/app/vendor.3b8ea179f2da4dfc3e86.js"></script>
+    <script type="text/javascript" src="<?=$proxyUrl?>/web/app/styles.3b8ea179f2da4dfc3e86.js"></script>
+    <script type="text/javascript" src="<?=$proxyUrl?>/web/app/app.3b8ea179f2da4dfc3e86.js"></script>
+</div>
