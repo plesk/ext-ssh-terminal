@@ -47,6 +47,7 @@ module.exports = (env = {}) => merge(baseConfig(env), {
             {
                 from: path.resolve(__dirname, './src/plib'),
                 to: path.resolve(output, 'plib'),
+                ignore: [ 'vendor/plesk/pm-api-stubs/**/*', 'vendor/plesk/zf1/**/*' ],
             },
         ]),
 
