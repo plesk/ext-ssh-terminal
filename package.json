@@ -14,7 +14,9 @@
     "lodash": "^4.17.5",
     "xterm": "^3.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest-canvas-mock": "^1.0.2"
+  },
   "scripts": {
     "build": "create-plesk-app build",
     "start": "create-plesk-app start",
@@ -25,7 +27,9 @@
     "test": "create-plesk-app test"
   },
   "jest": {
-    "rootDir": "src",
+    "rootDir": "src/frontend",
+    "setupFiles": ["jest-canvas-mock"],
+    "setupTestFrameworkScriptFile": "<rootDir>/test/windowMock.js",
     "moduleNameMapper": {
       "\\.(jpg|png)$": "<rootDir>/test/fileMock.js"
     }
