@@ -171,20 +171,9 @@ class TtyTerminal {
     const elementPaddingVer = parseInt(elementStyle.getPropertyValue('padding-top')) + parseInt(elementStyle.getPropertyValue('padding-bottom'));
     const elementPaddingHor = parseInt(elementStyle.getPropertyValue('padding-right')) + parseInt(elementStyle.getPropertyValue('padding-left'));
     const availableHeight = parentElementHeight - elementPaddingVer;
-    const availableWidth = parentElementWidth - elementPaddingHor;    
-    const subjectRow = this.term.rowContainer.firstElementChild;
-    const contentBuffer = subjectRow.innerHTML;
-        
-    subjectRow.style.display = 'inline';
-    // common character for measuring width, although on monospace
-    subjectRow.innerHTML = 'W'; 
-    
-    const characterWidth = subjectRow.getBoundingClientRect().width;
-    // revert style before calculating height, since they differ.
-    subjectRow.style.display = ''; 
-    
-    const characterHeight = parseInt(subjectRow.offsetHeight);
-    subjectRow.innerHTML = contentBuffer;
+    const availableWidth = parentElementWidth - elementPaddingHor;
+    const characterHeight = this.term.charMeasure.height;
+    const characterWidth = this.term.charMeasure.width;
 
     const rows = parseInt(availableHeight / characterHeight);
     const cols = parseInt(availableWidth / characterWidth);
