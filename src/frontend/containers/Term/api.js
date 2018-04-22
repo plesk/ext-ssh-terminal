@@ -1,22 +1,22 @@
 const api = {
 
-    put(path, data){
-        return api.ajax({url: path, data: JSON.stringify(data), method: 'PUT'});
+    put(path, data) {
+        return api.ajax({ url: path, data: JSON.stringify(data), method: 'PUT' });
     },
 
-    post(path, data){
-        return api.ajax({url: path, data: JSON.stringify(data), method: 'POST'});
+    post(path, data) {
+        return api.ajax({ url: path, data: JSON.stringify(data), method: 'POST' });
     },
 
-    delete(path, data){
-        return api.ajax({url: path, data: JSON.stringify(data), method: 'DELETE'});
+    delete(path, data) {
+        return api.ajax({ url: path, data: JSON.stringify(data), method: 'DELETE' });
     },
 
-    get(path){
-        return api.ajax({url: path});
+    get(path) {
+        return api.ajax({ url: path });
     },
 
-    ajax(cfg){
+    ajax(cfg) {
         return new Promise(resolve => {
             new Ajax.Request({
                 method: 'get',
@@ -28,14 +28,14 @@ const api = {
         });
     },
 
-    getErrorText(err){
-        let msg = 'Unknown error';
+    getErrorText(err) {
+        const msg = 'Unknown error';
 
         if (err instanceof Error) {
             return err.message || msg;
         }
 
-        if(err.responseJSON && err.responseJSON.message){
+        if (err.responseJSON && err.responseJSON.message) {
             return err.responseJSON.message;
         }
 
@@ -48,7 +48,7 @@ const api = {
         }
 
         return msg;
-    }
-}
+    },
+};
 
 export default api;

@@ -1,3 +1,3 @@
-import Term from "./Container";
+import Term from './Container';
 
 export default Term;

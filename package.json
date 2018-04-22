@@ -18,7 +18,7 @@
   "scripts": {
     "build": "create-plesk-app build",
     "start": "create-plesk-app start",
-    "lint": "create-plesk-app lint",
+    "lint": "create-plesk-app lint ./src/frontend",
     "zip": "create-plesk-app extension zip",
     "predeploy": "create-plesk-app build && create-plesk-app extension zip",
     "deploy": "create-plesk-app extension deploy",
