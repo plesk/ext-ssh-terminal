@@ -25,10 +25,10 @@ const GRV_CLASS = 'grv-terminal';
 const WINDOW_RESIZE_DEBOUNCE_DELAY = 200;
 
 /**
- * TtyTerminal is a wrapper on top of xtermjs that handles connections
+ * Terminal is a wrapper on top of xtermjs that handles connections
  * and resize events
  */
-class TtyTerminal {
+class Terminal {
 
   constructor(options){
     const { addressResolver, el, scrollBack = 1000 } = options;    
@@ -181,4 +181,4 @@ class TtyTerminal {
   }  
 }
 
-export default TtyTerminal;
+export default Terminal;

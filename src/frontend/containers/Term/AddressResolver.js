@@ -15,28 +15,22 @@ limitations under the License.
 */
 
 export default class AddressResolver {
-  _params = {
-    login: null,
-    target: () => {
-      throw Error('target method is not provided');
-    },
-    sid: null,
-    clusterName: null,
-    ttyUrl: null,
-    ttyEventUrl: null,
-    ttyResizeUrl: null
-  }
-
-  constructor(params){
+  constructor(params) {
     this._params = {
-      ...params
-    }    
+      login: null,
+      sid: null,
+      cluster: null,
+      ttyUrl: ':fqdm/modules/ssh-terminal/teleport/v1/webapi/sites/:cluster/connect?access_token=:token&params=:params',
+      ttyEventUrl: ':fqdm/modules/ssh-terminal/teleport/v1/webapi/sites/:cluster/sessions/:sid/events/stream?access_token=:token',
+      ttyResizeUrl: '/modules/ssh-terminal/teleport/v1/webapi/sites/:cluster/sessions/:sid',
+      ...params,
+    };
   }
 
   getConnStr(w, h){
-    const { getTarget, ttyUrl, login, sid} = this._params;
+    const { server_id, ttyUrl, login, sid } = this._params;
     const params = JSON.stringify({
-      ...getTarget(),
+      server_id,
       login,
       sid,      
       term: { h, w }
