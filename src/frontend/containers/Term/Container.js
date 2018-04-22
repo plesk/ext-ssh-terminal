@@ -7,31 +7,31 @@ class Container extends Component {
     componentDidMount() {
         const addressResolver = new AddressResolver(this.props);
         this.terminal = new Terminal({
-            el: this.refs.container,
-            addressResolver
+            el: this.container,
+            addressResolver,
         });
 
         this.terminal.ttyEvents.on('data', this.receiveEvents.bind(this));
         this.terminal.open();
     }
 
-    componentWillUnmount() {
-        this.terminal.destroy();
-    }
-
     shouldComponentUpdate() {
         return false;
     }
 
-    render() {
-        return ( <div ref="container"/> );
+    componentWillUnmount() {
+        this.terminal.destroy();
     }
 
     receiveEvents(data) {
-        let hasEnded = data.events.some(item => item.event === EventTypeEnum.END);
+        const hasEnded = data.events.some(item => item.event === EventTypeEnum.END);
         if (hasEnded) {
             close();
         }
+    }
+
+    render() {
+        return (<div ref={el => (this.container = el)} />);
     }
 }
 

@@ -1,5 +1,6 @@
 {
   "env": {
+    "prototypejs": true,
     "commonjs": true,
     "jest": true
   },
