@@ -13,42 +13,40 @@ const api = {
     },
 
     get(path) {
-        return api.ajax({ url: path });
+        return api.ajax({ url: path, method: 'GET' });
     },
 
-    ajax(cfg) {
-        return new Promise(resolve => {
-            new Ajax.Request({
-                method: 'get',
-                ignoreUAT: true,
-                contentType: 'application/json; charset=utf-8',
-                onSuccess: () => resolve(),
-                ...cfg,
+    ajax({ url, method, headers, data }) {
+        headers = {
+            ContentType: 'application/json; charset=utf-8',
+            ...headers,
+        };
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.onload = () => {
+                if (this.status >= 200 && this.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject({
+                        status: this.status,
+                        statusText: xhr.statusText,
+                    });
+                }
+            };
+            xhr.onerror = () => {
+                reject({
+                    status: this.status,
+                    statusText: xhr.statusText,
+                });
+            };
+            Object.keys(headers).forEach(key => {
+                xhr.setRequestHeader(key, headers[key]);
             });
+            xhr.send(data);
         });
     },
 
-    getErrorText(err) {
-        const msg = 'Unknown error';
-
-        if (err instanceof Error) {
-            return err.message || msg;
-        }
-
-        if (err.responseJSON && err.responseJSON.message) {
-            return err.responseJSON.message;
-        }
-
-        if (err.responseJSON && err.responseJSON.error) {
-            return err.responseJSON.error.message || msg;
-        }
-
-        if (err.responseText) {
-            return err.responseText;
-        }
-
-        return msg;
-    },
 };
 
 export default api;
