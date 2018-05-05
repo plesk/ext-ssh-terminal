@@ -1,20 +1,14 @@
-import { createElement, LocaleProvider, PropTypes } from '@plesk/ui-library';
+import { createElement, PropTypes } from '@plesk/ui-library';
 import Term from './containers/Term';
 
-const App = ({ locale }) => (
-    <LocaleProvider messages={require(`./locale/${locale}.json`)}>
-        <Term
-            login="root"
-            sid="test"
-            token="secret"
-            cluster="local"
-            serverId="1"
-        />
-    </LocaleProvider>
-);
+const App = props => <Term {...props} />;
 
 App.propTypes = {
-    locale: PropTypes.string.isRequired,
+    login: PropTypes.string.isRequired,
+    sid: PropTypes.string.isRequired,
+    token: PropTypes.string.isRequired,
+    cluster: PropTypes.string.isRequired,
+    serverId: PropTypes.string.isRequired,
 };
 
 export default App;
