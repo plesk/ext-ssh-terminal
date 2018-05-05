@@ -45,6 +45,13 @@ module.exports = (env = {}) => merge(baseConfig(env), {
 
         new CopyWebpackPlugin([
             {
+                from: path.resolve(__dirname, './node_modules/xterm/dist/xterm.css'),
+                to: path.resolve(output, 'htdocs/xterm.css'),
+            },
+        ]),
+
+        new CopyWebpackPlugin([
+            {
                 from: path.resolve(__dirname, './src/plib'),
                 to: path.resolve(output, 'plib'),
                 ignore: [ 'vendor/plesk/pm-api-stubs/**/*', 'vendor/plesk/zf1/**/*' ],
