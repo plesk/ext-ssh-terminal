@@ -1,15 +1,16 @@
 <?php
 // Copyright 1999-2018. Plesk International GmbH.
 
+/**
+ * Class IndexController
+ */
 class IndexController extends pm_Controller_Action
 {
+    /**
+     * Index Action
+     */
     public function indexAction()
     {
-        $this->view->pageTitle = $this->lmsg('index.title');
-        $this->view->login = 'root';
-        $this->view->sid = 'test';
-        $this->view->token = 'secret';
-        $this->view->cluster = 'local';
-        $this->view->serverId = '1';
+        $this->view->pageTitle = $this->lmsg('title');
     }
 }
