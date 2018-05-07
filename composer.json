@@ -9,8 +9,7 @@
         }
     },
     "require": {
-        "php": "^5.6|^7.0|^7.1",
-        "plesk/api-php-lib": "@dev"
+        "php": "^5.6|^7.1"
     },
     "require-dev": {
         "plesk/pm-api-stubs": "^17.8.4"

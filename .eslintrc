@@ -1,0 +1,14 @@
+{
+  "env": {
+    "prototypejs": true,
+    "commonjs": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "createElement"
+    }
+  },
+  "extends": "@plesk/eslint-config",
+  "rules": {}
+}

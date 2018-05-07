@@ -1,0 +1,37 @@
+{
+  "name": "ext-ssh-terminal",
+  "version": "1.0.0",
+  "description": "Web based SSH terminal for Plesk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/plesk/ext-ssh-terminal.git"
+  },
+  "author": "Plesk",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "create-plesk-app": "^1.0.1",
+    "events": "^2.0.0",
+    "lodash": "^4.17.5",
+    "xterm": "^3.3.0"
+  },
+  "devDependencies": {
+    "jest-canvas-mock": "^1.0.2"
+  },
+  "scripts": {
+    "build": "create-plesk-app build",
+    "start": "create-plesk-app start",
+    "lint": "create-plesk-app lint ./src/frontend",
+    "zip": "create-plesk-app extension zip",
+    "predeploy": "create-plesk-app build && create-plesk-app extension zip",
+    "deploy": "create-plesk-app extension deploy",
+    "test": "create-plesk-app test"
+  },
+  "jest": {
+    "rootDir": "src/frontend",
+    "setupFiles": ["jest-canvas-mock"],
+    "setupTestFrameworkScriptFile": "<rootDir>/test/windowMock.js",
+    "moduleNameMapper": {
+      "\\.(jpg|png)$": "<rootDir>/test/fileMock.js"
+    }
+  }
+}
